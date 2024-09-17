@@ -4,10 +4,11 @@
 # Maintainer:  Truocolo <truocolo@aol.com>
 # Contributor: Filipe Bertelli <filipebertelli@tutanota.com>
 
-_pkg="inherits"
+_node="nodejs"
+_pkg=inherits
 pkgbase="${_pkg}"
 pkgname=(
-  "nodejs-${pkgbase}"
+  "${pkgbase}"
 )
 _pkgdesc=(
   'Browser-friendly inheritance fully compatible'
@@ -33,7 +34,10 @@ makedepends=(
   'npm'
 )
 provides=(
-  "${pkgbase}=${pkgver}"
+  "${_node}-${pkgbase}=${pkgver}"
+)
+conflicts=(
+  "${_node}-${pkgbase}"
 )
 _npm="http://registry.npmjs.org"
 source=(
